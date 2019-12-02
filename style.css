@@ -1,0 +1,177 @@
+:root {
+    --backColor: #1f1f1f;
+    --hueColor: #e0e0e0;
+}
+
+body {
+    left: 0px;
+    top: 0px;
+}
+
+#player {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 2fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "image progress progress progress"
+        "image controls title logo"
+        "image volume title logo"
+    ;
+    width: auto;
+    background-color: var(--backColor);
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px 0px black;
+}
+
+#volume {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: volume;
+}
+
+#volume img {
+    width: 2vw;
+}
+
+.valVolume {
+    width: 15vw;
+    height: 20px;
+    background-color: var(--hueColor);
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.volume {
+    width: 100%;
+    background-color: lightgreen;
+    height: 20px;
+    border-radius: 5px;
+}
+
+#progressContainer {
+    grid-area: progress;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#progressBar {
+    width: 95%;
+    height: 10px;
+    display: block;
+    border: 1px solid var(--hueColor);
+    border-radius: 5px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+#progress {
+    display: block;
+    width: 0%;
+    height: 100%;
+    background-color: lightgreen;
+    border-radius: 3px;
+}
+
+#controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    grid-area: controls;
+}
+
+svg {
+    width: 2vw;
+    fill: var(--hueColor);
+    cursor: pointer; 
+}
+
+#title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lacquer', sans-serif;
+    font-size: 2em;
+    color: #e0e0e0;
+    grid-area: title;
+}
+
+#title p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+#logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: logo;
+}
+
+#image {
+    grid-area: image;
+}
+
+#image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+#logo img {
+    width: 50%;
+}
+
+.pause {
+    position: absolute;
+    visibility: hidden;
+}
+
+.play {
+    visibility: visible;
+}
+
+@media (max-width: 830px) {
+    #player {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #image {
+        margin: 5%;
+    }
+
+    p {
+        font-size: 10vw;
+    }
+
+    #controls {
+        display: flex;
+        width: 100%;
+        margin: 5% 0px;
+    }
+
+    #volume {
+        display: flex;
+        width: 100%;
+    }
+
+    .valVolume {
+        width: 40vw;
+    }
+
+    #logo {
+        margin: 5% 25%;
+        width: 50%;
+    }
+
+    svg {
+        width: 5vw;
+    }
+
+    #volume img {
+        width: 5vw;
+    }
+}
